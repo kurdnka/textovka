@@ -1,0 +1,16 @@
+<game>
+	<location>doma</location>
+	<time>01/05/2014 07:00:00</time>
+	<inventory>
+		<item>kolo</item>
+		<item>telefon</item>
+	</inventory>
+	<hotovost>3000</hotovost>
+	<ucet>30000</ucet>
+	<locations>
+		<location id=""></location>
+	</locations>
+	<npcs>
+		<npc id=""></npc>
+	</npcs>
+</game>

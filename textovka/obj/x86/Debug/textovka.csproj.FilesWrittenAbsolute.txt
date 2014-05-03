@@ -1,0 +1,5 @@
+/Users/kudrnka/Projects/textovka/textovka/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/kudrnka/Projects/textovka/textovka/bin/Debug/textovka.exe.mdb
+/Users/kudrnka/Projects/textovka/textovka/bin/Debug/textovka.exe
+/Users/kudrnka/Projects/textovka/textovka/obj/x86/Debug/textovka.exe
+/Users/kudrnka/Projects/textovka/textovka/obj/x86/Debug/textovka.exe.mdb
