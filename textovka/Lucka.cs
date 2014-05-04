@@ -6,11 +6,13 @@ namespace textovka
 	public class Lucka
 	{
 		private Location location;
-		private List<Item> Inventory { get; set; }
+		private List<IItem> Inventory { get; set; }
 		private TimeSpan timeAwake;
 
 		public Lucka ()
 		{
+			Inventory = new List<IItem>();
+			Inventory.Add(new BaseItem("dummy 2"));
 		}
 
 		public void Go(int roomId)

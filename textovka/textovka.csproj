@@ -43,6 +43,9 @@
     <Compile Include="NPC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="World.cs" />
+    <Compile Include="Quest.cs" />
+    <Compile Include="ItemStatus.cs" />
+    <Compile Include="IItem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

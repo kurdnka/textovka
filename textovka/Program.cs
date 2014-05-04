@@ -20,7 +20,8 @@ namespace textovka
 			Console.WriteLine ("@doma> inventář");
 			Console.WriteLine ("mobil, notebook, peníze");
 			Console.Write ("@doma> ");
-			Console.ReadLine ();
+
+			BaseItem baseitem = new BaseItem ();
 		}
 
 	}

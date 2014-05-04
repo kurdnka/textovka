@@ -52,10 +52,21 @@ namespace textovka
 			weather = Math.Sin ((time.Month - 1) / 12.0 * Math.PI) * 40.0 - 20 + 10*Math.Sin(time.Hour/24*Math.PI)  + (r.NextDouble () - 0.5) * 10;
 		}
 
+		public void UpdateWeather(TimeSpan dt)
+		{
+			Random r = new Random ();
+			if (dt.Days < 1)
+				weather = weather - 10*Math.Sin((time.Hour-dt.Hours)/24*Math.PI) + 
+					10*Math.Sin(time.Hour/24*Math.PI) + 
+					(r.NextDouble () - 0.5) * dt.Hours;
+			else 
+				weather = Math.Sin ((time.Month - 1) / 12.0 * Math.PI) * 40.0 - 20 + 10*Math.Sin(time.Hour/24*Math.PI)  + (r.NextDouble () - 0.5) * 10;
+		}
+
 		public void AddToTime(TimeSpan dt)
 		{
 			time += dt;
-			UpdateWeather ();
+			UpdateWeather (dt);
 			UpdateTraffic ();
 		}
 
