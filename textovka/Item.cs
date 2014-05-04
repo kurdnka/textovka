@@ -20,22 +20,10 @@ namespace textovka
 		public float weight { get; protected set; }
 		#endregion
 
-		public XmlSchema GetSchema()
-		{
-			return null;
-		}
-
 		public BaseItem (string name)
 		{
-			XmlSerializer deserializer = new XmlSerializer (typeof(BaseItem));
-			TextReader textReader = new StreamReader ("Items/"+name+".xml");
-			BaseItem item = (BaseItem)deserializer.Deserialize (textReader);
-			textReader.Close ();
-			this.name = item.name;
-			this.price = item.price;
-			this.status = item.status;
-			this.weight = item.weight;
-			this.description = item.description;
+			this.name = name;
+			LoadXml ();
 		}
 			
 		public BaseItem ()
@@ -47,12 +35,29 @@ namespace textovka
 			weight = 0;
 		}
 
-		~BaseItem()
+		public void LoadXml()
+		{
+			XmlSerializer deserializer = new XmlSerializer (typeof(BaseItem));
+			XmlTextReader textReader = new XmlTextReader ("Items/"+this.name+".xml");
+			BaseItem item = (BaseItem)deserializer.Deserialize (textReader);
+			textReader.Close ();
+			this.price = item.price;
+			this.status = item.status;
+			this.weight = item.weight;
+			this.description = item.description;
+		}
+
+		public void SaveXml()
 		{
 			XmlTextWriter textWriter = new XmlTextWriter (Path.Combine("Items",name+".xml"), System.Text.Encoding.UTF8);
 			XmlSerializer serializer = new XmlSerializer (typeof(BaseItem));
 			serializer.Serialize (textWriter, this);
 			textWriter.Close ();
+		}
+
+		~BaseItem()
+		{
+			SaveXml ();
 		}
 	}
 }
